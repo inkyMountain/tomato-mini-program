@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+<view class='wholeBackground'></view>
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -7,7 +8,14 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="components">
+    <t-button bindtap='onbuttontap' background='gradient' length='short'></t-button>
+    <t-clock> </t-clock>
   </view>
+  <t-confirm class='t-confirm' bindconfirm='onConfirm' bindcancel='onCancel'></t-confirm>
+  <t-todo text="今天要做什么呢" status="todo" class='t-todo'></t-todo>
+  <t-todo text="明天要做什么呢" status="done" class='t-todo'></t-todo>
+  <t-todo text="后天要做什么呢" status="done" class='t-todo'></t-todo>
+  <t-todo text="大后天要做什么呢" status="todo" class='t-todo'></t-todo>
+  <t-todo text="大后天要做什么呢" class='t-todo'></t-todo>
 </view>

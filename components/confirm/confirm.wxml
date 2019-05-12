@@ -1,0 +1,14 @@
+<!--components/confirm/confirm.wxml-->
+<view class='container'>
+  <textarea class='content' placeholder-class='placeholder'
+    placeholder='{{placeholder}}' auto-focus auto-height='true'
+    maxlength='300'/>
+  <view class='buttons'>
+    <view class='button confirm' bindtap='onConfirm'>
+      确定
+    </view>
+    <view class='button cancel' bindtap='onCancel'>
+      取消
+    </view>
+  </view>
+</view>

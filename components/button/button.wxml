@@ -1,0 +1,4 @@
+<!--components/button/button.wxml-->
+<view class='button {{length}}  {{background}}' bindtap='ontap'>
+  <text class='text'>{{text}}</text>
+</view>

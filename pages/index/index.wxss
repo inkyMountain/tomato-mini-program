@@ -1,4 +1,17 @@
 /**index.wxss**/
+
+.container{
+  position: relative;
+}
+.wholeBackground{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #EEF7F6;
+  z-index: -1;
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -6,9 +19,9 @@
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
+  width: 64px;
+  height: 64px;
+  margin: 10px;
   border-radius: 50%;
 }
 
@@ -16,6 +29,17 @@
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 200px;
+.components {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.t-confirm{
+  align-self: stretch;
+}
+
+.t-todo{
+  align-self: stretch;
+}
+

@@ -1,0 +1,5 @@
+<!--components/todo/todo.wxml-->
+<view class='container'>
+  <view class='status {{status}}'></view>
+  <view class='content'>{{text}}</view>
+</view>

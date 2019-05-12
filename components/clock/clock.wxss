@@ -1,0 +1,15 @@
+/* components/clock/clock.wxss */
+.clock{
+  width: 134.5px;
+  height: 134.5px;
+  position: relative;
+}
+.clock .time{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+}

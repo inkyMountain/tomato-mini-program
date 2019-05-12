@@ -50,5 +50,15 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  
+  onbuttontap(event){
+    console.log(event, '外部的点击函数')
+  },
+  onConfirm(event){
+    console.log(event)
+  },
+  onCancel(event){
+    console.log(event)
   }
 })

@@ -1,13 +1,40 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/sumup/sumup",
+    "pages/focus/focus",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#EEF7F6",
+    "navigationBarTitleText": "番茄闹钟",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#7F8389",
+    "selectedColor": "#F6705A",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "专注",
+        "iconPath": "img/focus.png",
+        "selectedIconPath": "img/focus-active.png"
+      },
+      {
+        "pagePath": "pages/sumup/sumup",
+        "text": "数据统计",
+        "iconPath": "img/sumup.png",
+        "selectedIconPath": "img/sumup-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "img/my.png",
+        "selectedIconPath": "img/my-active.png"
+      }
+    ]
+  }
 }

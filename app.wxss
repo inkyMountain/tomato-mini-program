@@ -1,10 +1,18 @@
 /**app.wxss**/
+page{
+  padding: 0;
+}
 .container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
   box-sizing: border-box;
+  background: #EEF7F6;
 } 
+
+view, text, view::after, view::before, text::after, text::before{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

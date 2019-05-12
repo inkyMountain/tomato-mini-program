@@ -1,0 +1,50 @@
+/* components/confirm/confirm.wxss */
+
+.placeholder{
+  color: gray; 
+  font-size: 12px;
+}
+.container{
+  border-radius: 7px;
+  padding: 13px 10px 0 10px;
+  background: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0 27.5px;
+}
+
+.container .content{
+  min-height: 20px;
+  height: auto;
+  width: auto;
+  background: #F2F2F2;
+  border-radius: 7px;
+  padding: 20px 17px;
+  font-size: 14px;
+}
+
+.container .buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.container .buttons .button{
+  flex: 1 1 auto;
+  text-align: center;
+  font-size: 12px;
+  padding: 14px 0;
+  border-radius: 5px;
+}
+
+.container .buttons .confirm{
+  color: #F6705A;
+}
+
+.container .buttons .confirm:active{
+  background: #ccc;
+  color: black;
+}
+.container .buttons .cancel:active{
+  background: rgba(248, 114, 114, 0.5);
+}

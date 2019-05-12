@@ -1,0 +1,4 @@
+<!--components/clock/clock.wxml-->
+<image src='{{imgsrc}}' class='clock' mode='cover'>
+  <text class='time'>{{text}}</text>
+</image>

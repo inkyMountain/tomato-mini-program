@@ -9,6 +9,9 @@ App({
     // 登录
     wx.login({
       success: res => {
+        // console.log(res)
+        // this.globalData.loginCode = res.code
+        // console.log(this.globalData.loginCode)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })

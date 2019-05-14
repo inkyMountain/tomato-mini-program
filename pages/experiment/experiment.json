@@ -4,6 +4,5 @@
     "t-clock": "../../components/clock/clock",
     "t-confirm": "../../components/confirm/confirm",
     "t-todo": "../../components/todo/todo"
-  },
-  "navigationBarBackgroundColor": "white"
+  }
 }

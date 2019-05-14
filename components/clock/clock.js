@@ -19,6 +19,10 @@ Component({
     height: {
       type: Number,
       value: 100
+    },
+    texttype: {
+      type: String,
+      value: 'plainText'
     }
   },
 

@@ -8,9 +8,9 @@ Component({
       type: String,
       value: 'todo'
     },
-    status: {
-      type: String,
-      value: 'todo'  // 完成：done, 未完成：todo
+    finished: {
+      type: Boolean,
+      value: false 
     }
   },
 

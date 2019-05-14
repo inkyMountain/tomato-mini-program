@@ -8,7 +8,6 @@ page{
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  background: #EEF7F6;
 } 
 
 view, text, view::after, view::before, text::after, text::before{

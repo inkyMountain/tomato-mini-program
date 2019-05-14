@@ -4,12 +4,24 @@
   height: 134.5px;
   position: relative;
 }
-.clock .time{
+.clock:active{
+  opacity: 0.5;
+}
+.clock .text{
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.clock .text.number{
   font-family: 'Courier New', Courier, monospace;
   font-size: 25px;
+}
+
+.clock .text.plainText{
+  font-size: 12px;
 }

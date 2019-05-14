@@ -18,9 +18,11 @@
   background: linear-gradient(135deg, rgba(254,153,111,1) 0%,rgba(246,112,90,1) 100%); 
 }
 .button.transparent{
-  border: 2px solid #F6705A;
+  border: 2px solid rgba(254,153,111,1);
   color: #F6705A;
   background-color: transparent;
+  width: 176px;
+  height: 36px;
 }
 .button.long{
   width: 270px;

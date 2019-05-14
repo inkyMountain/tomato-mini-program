@@ -1,0 +1,7 @@
+<!--pages/timer/timer.wxml-->
+<view class='container'>
+  <text class='suggestion'>据结束还有</text>
+  <t-clock class='t-clock' texttype='{{texttype}}' text='{{time}}'></t-clock>
+  <t-button class='pause' bindtap='toggleStatus' text='{{controlButtonText}}' background='gradient' length='short'></t-button>
+  <t-button class='giveup' text='放弃' bindtap='giveup' background='transparent' length='short'></t-button>
+</view>

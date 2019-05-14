@@ -1,0 +1,54 @@
+/* pages/login/login.wxss */
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  transform: translate(0, -10%);
+}
+
+.avatar{
+  width: 134.5px;
+  height: 134.5px;
+  border-radius: 50%;
+  border: solid 5px #F6705A;
+  overflow: hidden;
+}
+
+.username{
+  color: #F6705A;
+  font-size: 14px;
+  position: relative;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.username::before{
+  content: '';
+  display: block;
+  height: 2px;
+  background: #F6705A;
+  width: 90px;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 10px);
+}
+
+.login{
+  /* width: 270px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  box-shadow: 0px 11px 32px 0px rgba(246,112,90,0.30);
+  border-radius: 7px;
+  width: 180px;
+  background: linear-gradient(135deg, rgba(254,153,111,1) 0%,rgba(246,112,90,1) 100%); 
+  color: white;
+  font-size: 13px;
+  margin-top: 35px;
+}
+.login::after{
+  border: none;
+}

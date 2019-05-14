@@ -1,0 +1,6 @@
+<!--pages/login/login.wxml-->
+<view class='container'>
+  <open-data type='userAvatarUrl' class='avatar'></open-data>
+  <open-data type='userNickName' class='username'></open-data>
+  <button class='login' open-type='getUserInfo' bindgetuserinfo='onGetUserInfo'>微信登陆</button>
+</view>

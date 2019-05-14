@@ -4,7 +4,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    placeholder: {
+    text: {
       type: String,
       value: '我想要做：...'
     }
@@ -14,7 +14,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    value: ''
   },
 
   /**
@@ -22,12 +22,15 @@ Component({
    */
   methods: {
     onConfirm(event){
-      // console.log('onConfirmTrigger')
-      this.triggerEvent('confirm', event)
+      this.triggerEvent('confirm', this.data.value)
     },
     onCancel(event){ 
-      // console.log('onConfirmCancel')
-      this.triggerEvent('cancel', event)
+      this.triggerEvent('cancel', this.data.value)
+    },
+    onInput(event){
+      this.setData({
+        value: event.detail.value
+      })
     }
   }
 })

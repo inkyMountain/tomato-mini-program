@@ -1,21 +1,17 @@
-<!--index.wxml-->
-<view class="container">
-<view class='wholeBackground'></view>
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<!--pages/index/index.wxml-->
+<view class='container'>
+  <scroll-view class='todolist' bindscroll='onScroll' scrollTop='{{scrollTop}}' data-xxx='xxx' scroll-y='true' >
+    <block wx:for='{{todolist}}' wx:key='{{index}}'>
+      <t-todo text='{{item.text}}' finished='{{item.finished}}'></t-todo>
     </block>
+  </scroll-view>
+  <view class='panel'>
+    <view class='line'></view>
+    <t-button class='create' text="创建任务" background="gradient" bindtap='create'></t-button>
+    <t-clock class='tomato' bindtap='toTimer' text='开始番茄' texttype='plainText'></t-clock>
   </view>
-  <view class="components">
-    <t-button bindtap='onbuttontap' background='gradient' length='short'></t-button>
-    <t-clock> </t-clock>
+  <view class='confirm' wx:if='{{confirmVisible}}'>
+    <view class='mask'></view>
+    <t-confirm text='定个小目标' bindconfirm='onConfirm' bindcancel='onCancel' class='box'></t-confirm>
   </view>
-  <t-confirm class='t-confirm' bindconfirm='onConfirm' bindcancel='onCancel'></t-confirm>
-  <t-todo text="今天要做什么呢" status="todo" class='t-todo'></t-todo>
-  <t-todo text="明天要做什么呢" status="done" class='t-todo'></t-todo>
-  <t-todo text="后天要做什么呢" status="done" class='t-todo'></t-todo>
-  <t-todo text="大后天要做什么呢" status="todo" class='t-todo'></t-todo>
-  <t-todo text="大后天要做什么呢" class='t-todo'></t-todo>
 </view>

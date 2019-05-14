@@ -1,64 +1,132 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
+// pages/index/index.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    todolist: [
+      {id: 1, text: '今天要做的事情', finished: false},
+      { id: 2, text: '明天要做的事情', finished: true },
+      { id: 3, text: '后天要做的事情', finished: false },
+      { id: 4, text: '大后天要做的事情', finished: false },
+      { id: 5, text: '今天要做的事情', finished: false },
+      { id: 6, text: '明天要做的事情', finished: true },
+      { id: 7, text: '后天要做的事情', finished: false },
+      { id: 8, text: '大后天要做的事情', finished: false },
+      { id: 9, text: '今天要做的事情', finished: false },
+      { id: 10, text: '明天要做的事情', finished: true },
+      { id: 11, text: '后天要做的事情', finished: false },
+      { id: 12, text: '大后天要做的事情', finished: false },
+      { id: 13, text: '今天要做的事情', finished: false },
+      { id: 14, text: '明天要做的事情', finished: true },
+      { id: 15, text: '后天要做的事情', finished: false },
+      { id: 16, text: '大后天要做的事情', finished: false }
+      ],
+    confirmVisible: false,
+    scrollTop: 0,
+    scrollHeight: 0
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+
+  onScroll(event){
+    // console.log(event.detail)
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      scrollTop: event.detail.scrollTop,
+      scrollHeight: event.detail.scrollHeight
     })
   },
-  
-  onbuttontap(event){
-    console.log(event, '外部的点击函数')
+  log(content){
+    console.log(content)
+  },
+
+  create(event) {
+    console.log(event)
+    this.setData({
+      confirmVisible: true
+    })
   },
   onConfirm(event){
-    console.log(event)
+    let todolist = this.data.todolist
+    let id = todolist[todolist.length - 1].id + 1
+    todolist.push({
+      id: id,
+      text: event.detail, 
+      finished: false
+    })
+    this.setData({
+      confirmVisible: false,
+      todolist: todolist,
+      scrollTop: this.data.scrollHeight
+    })
   },
   onCancel(event){
-    console.log(event)
+    this.setData({
+      confirmVisible: false
+    })
+    console.log('cancel', event.detail)
+  },
+  toTimer(){
+    wx.navigateTo({
+      url: '../../pages/timer/timer'
+    })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    console.log('index, onLoad, query:', options)
+    this.setData({
+      scrollTop: 1
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
+  
 })

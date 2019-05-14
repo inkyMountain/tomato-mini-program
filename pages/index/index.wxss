@@ -1,45 +1,76 @@
-/**index.wxss**/
+/* pages/index/index.wxss */
 
 .container{
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  background: #F6F6F6;
+}
+
+.todolist{
+  position: relative;
+  overflow: auto;
+  margin-bottom: 33px;
+  z-index: 1;
+}
+
+
+.container .todolist{
+  flex: 1;
+  padding-bottom: 10px;
+}
+
+.container .panel{
+  height: 236.5px;
+  /* background: #EEF7F6; */
+  background: white;
+  border-radius: 7px;
+  box-shadow: 0px -2px 8px 0px rgba(0,0,0,0.10);
+  margin: 0 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   position: relative;
 }
-.wholeBackground{
+
+.container .panel .create{
   position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+.container .panel .tomato{
+  margin-bottom: 30px;
+}
+
+.container .panel .line{
+  content: '';
+  display: block;
+  width: 1px;
+  height: 1000px;
+  background: #F6705A;
+  position: absolute;
+  left: 25px;
+  bottom: 100%;
+}
+
+.container .confirm{
+  position: fixed;
   left: 0;
   top: 0;
-  height: 100vh;
   width: 100vw;
-  background: #EEF7F6;
-  z-index: -1;
-}
-.userinfo {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
 }
-
-.userinfo-avatar {
-  width: 64px;
-  height: 64px;
-  margin: 10px;
-  border-radius: 50%;
+.container .confirm .box{
+  margin-top: 80px;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.container .confirm.hidden{
+  display: none;
 }
-
-.components {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.t-confirm{
-  align-self: stretch;
-}
-
-.t-todo{
-  align-self: stretch;
-}
-

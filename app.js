@@ -7,13 +7,22 @@ App({
         this.globalData.code = res.code
       }
     })
+    wx.showToast({
+      title: '哈哈'
+    })
+    console.log(this.globalData.app_id)
+    Object.assign(this.globalData, require('conf'))
+    console.log(this.globalData.app_id)
   },
   globalData: {
     host: 'https://gp-server.hunger-valley.com',
-    app_id: 'wxf2e4c3aad8a71c5a',
-    app_secret: '29392ad1a5317abcb4d4bb1122fa3d4b',
-    t_app_id: 'HxUp71ptAmo4FLbAwsfgYJGT',
-    t_app_secret: 'WeuT83Rv58kHM3vXLEmfeAvD',
+    // host: 'https://blog-server.hunger-valley.com',
     code: undefined
   }
 })
+
+// let {http} = require('utils/http.js')
+// console.log(http)
+// http.get('').then((res) => {
+//   console.log('成功', res)
+// })

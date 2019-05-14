@@ -1,4 +1,6 @@
 // pages/login/login.js
+const app = getApp()
+const {http} = require('../../utils/http.js')
 Page({
 
   /**
@@ -9,7 +11,16 @@ Page({
   },
 
   onGetUserInfo(event){
-    console.log(event)
+    app.globalData.userInfo = event.userInfo
+    app.globalData.auth = event.detail
+    console.log(app.globalData)
+    const { app_id, app_secret, code } = app.globalData
+    const { iv, encryptedData } = app.globalData.auth
+    http.post('/sign_in/mini_program_user', { code, iv, encryptedData, app_id, app_secret }).then((res) => {
+      console.log('resolve')
+    }, (res) => {
+      console.log('reject')
+    })
   },
 
   /**

@@ -2,7 +2,6 @@ let app = getApp()
 const { t_app_id, t_app_secret, host} = app.globalData
 let request = (method, url, data) => {
   return new Promise((resolve, reject) => {
-    
     wx.request({
       url: `${host}${url}`,
       data,
@@ -21,6 +20,7 @@ let request = (method, url, data) => {
         }else{
           resolve(res)
         }
+        wx.setStorageSync('X-token', res.header['X-token'])
       },
       fail(res) {
         wx.showToast({

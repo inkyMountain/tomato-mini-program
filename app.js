@@ -7,12 +7,7 @@ App({
         this.globalData.code = res.code
       }
     })
-    wx.showToast({
-      title: '哈哈'
-    })
-    console.log(this.globalData.app_id)
     Object.assign(this.globalData, require('conf'))
-    console.log(this.globalData.app_id)
   },
   globalData: {
     host: 'https://gp-server.hunger-valley.com',

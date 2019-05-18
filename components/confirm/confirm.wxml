@@ -4,10 +4,10 @@
     placeholder='{{text}}' auto-focus auto-height='true'
     maxlength='300' bindinput='onInput' value='{{value}}'/>
   <view class='buttons'>
-    <view class='button cancel' bindtap='onCancel'>
+    <view class='button cancel' catchtap='onCancel'>
       取消
     </view>
-    <view class='button confirm' bindtap='onConfirm'>
+    <view class='button confirm' catchtap='onConfirm'>
       确定
     </view>
   </view>

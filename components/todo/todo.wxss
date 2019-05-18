@@ -7,15 +7,16 @@
   box-sizing: border-box;
   margin: 7.5px 15px;
   border-radius: 5px;
-  padding: 8.5px 24.5px 8.5px 0;
   position: relative;
 }
 
-.container:active{
-  background: rgb(233, 233, 233);
-}
+
 .status{
   width: 40.5px;
+  border-radius: 5px;
+}
+.status:active{
+  background: rgba(254, 154, 111, 0.4)
 }
 .status::before, .status::after{
   content: '';
@@ -40,6 +41,7 @@
   font-size: 12px;
   color: #333;
   flex: 1;
+  padding: 8.5px 24.5px 8.5px 0;
 }
 
 

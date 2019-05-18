@@ -25,6 +25,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onStatusTap(event){
+      this.triggerEvent('changestatus')
+    },
+    onContentTap(event){
+      this.triggerEvent('editcontent', event.currentTarget.dataset.text)
+    }
   }
 })

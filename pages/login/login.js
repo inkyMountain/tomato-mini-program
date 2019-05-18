@@ -2,7 +2,6 @@
 const app = getApp()
 const {http} = require('../../utils/http.js')
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -13,15 +12,30 @@ Page({
   onGetUserInfo(event){
     app.globalData.userInfo = event.userInfo
     app.globalData.auth = event.detail
-    console.log(app.globalData)
     const { app_id, app_secret, code } = app.globalData
     const { iv, encryptedData } = app.globalData.auth
-    http.post('/sign_in/mini_program_user', { code, iv, encryptedData, app_id, app_secret }).then((res) => {
-      console.log('resolve')
+    const encrypted_data = encryptedData
+    http.post('/sign_in/mini_program_user', { code, iv, encrypted_data, app_id, app_secret }).then((res) => {
+      console.log('登录成功')
+      wx.reLaunch({
+        url: '../../pages/index/index',
+        success(){
+          wx.showToast({
+            title: '登录成功'
+          })
+        }
+      })
     }, (res) => {
-      console.log('reject')
+      console.log('登录失败')
+      wx.showToast({
+        title: '登录失败',
+        icon: 'none'
+      })
     })
   },
+
+
+
 
   /**
    * 生命周期函数--监听页面加载

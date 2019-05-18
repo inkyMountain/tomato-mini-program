@@ -1,2 +1,18 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class='container'>
+  <view class='profile'>
+    <open-data type='userAvatarUrl' class='avatar'></open-data>
+    <open-data type='userNickName' class='username'>
+      <view class='decoration'></view>
+    </open-data>
+    <view class='advice'>问题反馈</view>
+  </view>
+  <view class='tabs'>
+    <view class='history tab'><text class='text'>番茄历史</text></view>
+    <view class='task tab'><text class='text'>我完成的任务</text></view>
+  </view>
+  <view class='card'>
+    <view class='date'></view>
+    <view class='item'></view>
+  </view>
+</view>

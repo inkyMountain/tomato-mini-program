@@ -1,0 +1,2 @@
+<!--components/lineThroughText/lineThroughText.wxml-->
+<text class='content'>{{text}}</text>

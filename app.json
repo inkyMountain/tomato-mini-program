@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/my/my",
     "pages/login/login",
     "pages/index/index",
     "pages/timer/timer",
     "pages/sumup/sumup",
     "pages/focus/focus",
-    "pages/my/my",
     "pages/experiment/experiment"
   ],
   "window": {
@@ -27,7 +27,7 @@
       },
       {
         "pagePath": "pages/experiment/experiment",
-        "text": "数据统计",
+        "text": "测试用Tag",
         "iconPath": "img/sumup.png",
         "selectedIconPath": "img/sumup-active.png"
       },

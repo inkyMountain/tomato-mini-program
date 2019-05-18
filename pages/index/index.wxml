@@ -1,17 +1,25 @@
 <!--pages/index/index.wxml-->
 <view class='container'>
-  <scroll-view class='todolist' bindscroll='onScroll' scrollTop='{{scrollTop}}' data-xxx='xxx' scroll-y='true' >
+  <scroll-view class='todolist' catchscroll='onScroll' scrollTop='{{scrollTop}}' scroll-y='true' >
     <block wx:for='{{todolist}}' wx:key='{{index}}'>
-      <t-todo text='{{item.text}}' finished='{{item.finished}}'></t-todo>
+      <t-todo catchchangestatus='changeStatus' catcheditcontent='editContent' text='{{item.description}}' finished='{{item.completed}}' id='{{item.id}}' data-index='{{index}}' wx:if='{{!item.completed}}'></t-todo>
     </block>
   </scroll-view>
+
   <view class='panel'>
     <view class='line'></view>
-    <t-button class='create' text="创建任务" background="gradient" bindtap='create'></t-button>
-    <t-clock class='tomato' bindtap='toTimer' text='开始番茄' texttype='plainText'></t-clock>
+    <t-button class='create' text="创建任务" background="gradient" catchtap='create'></t-button>
+    <t-clock class='tomato' catchtap='navigateToTimer' text='开始番茄' texttype='plainText'></t-clock>
   </view>
-  <view class='confirm' wx:if='{{confirmVisible}}'>
+
+
+  <view class='createForm' catchtap='onCreateCancel' wx:if='{{createForm.visible}}'>
     <view class='mask'></view>
-    <t-confirm text='定个小目标' bindconfirm='onConfirm' bindcancel='onCancel' class='box'></t-confirm>
+    <t-confirm text='定个小目标' catchconfirm='onCreateConfirm' catchcancel='onCreateCancel' class='box'></t-confirm>
+  </view>
+
+  <view class='editForm' catchtap='onEditCancel' wx:if='{{editForm.visible}}'>
+    <view class='mask' ></view>
+    <t-confirm value='{{editForm.content}}' catchconfirm='onEditConfirm' catchcancel='onEditCancel' class='box'></t-confirm>
   </view>
 </view>

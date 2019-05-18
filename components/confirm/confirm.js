@@ -7,6 +7,10 @@ Component({
     text: {
       type: String,
       value: '我想要做：...'
+    },
+    value: {
+      type: String,
+      value: ''
     }
   },
 
@@ -14,7 +18,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    value: ''
+
   },
 
   /**

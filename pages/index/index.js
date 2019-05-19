@@ -74,6 +74,7 @@ Page({
   },
   // 创建任务form的取消按钮 | 效果: 隐藏创建form。
   onCreateCancel(event){
+    console.log('cancel')
     this.setData({
       'createForm.visible': false,
     })

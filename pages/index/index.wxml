@@ -13,13 +13,13 @@
   </view>
 
 
-  <view class='createForm' catchtap='onCreateCancel' wx:if='{{createForm.visible}}'>
-    <view class='mask'></view>
+  <view class='createForm' wx:if='{{createForm.visible}}'>
+    <view class='mask' catchtap='onCreateCancel'></view>
     <t-confirm text='定个小目标' catchconfirm='onCreateConfirm' catchcancel='onCreateCancel' class='box'></t-confirm>
   </view>
 
-  <view class='editForm' catchtap='onEditCancel' wx:if='{{editForm.visible}}'>
-    <view class='mask' ></view>
+  <view class='editForm'  wx:if='{{editForm.visible}}'>
+    <view class='mask' catchtap='onEditCancel'></view>
     <t-confirm value='{{editForm.content}}' catchconfirm='onEditConfirm' catchcancel='onEditCancel' class='box'></t-confirm>
   </view>
 </view>

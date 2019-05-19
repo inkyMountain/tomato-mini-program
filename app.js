@@ -1,3 +1,4 @@
+
 //app.js
 App({
   onLaunch: function () {
@@ -16,8 +17,8 @@ App({
   }
 })
 
-// let {http} = require('utils/http.js')
-// console.log(http)
-// http.get('').then((res) => {
-//   console.log('成功', res)
-// })
+let {http} = require('utils/http.js')
+http.post('/tomatoes')
+http.get('/tomatoes').then((res) => {
+  console.log('tomatoes: ', res)
+})

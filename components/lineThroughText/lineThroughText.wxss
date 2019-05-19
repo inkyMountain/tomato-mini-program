@@ -1,12 +1,11 @@
 /* components/lineThroughText/lineThroughText.wxss */
 
 .content{
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: rgb(63, 63, 63);
   position: relative;
-  margin: 5px 0 0 10px;
-  letter-spacing: 1px;
+  letter-spacing: 1px; 
   z-index: 0;
 }
 
